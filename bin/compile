@@ -28,9 +28,10 @@ make
 echo "-----> Running 7zip tests"
 make test
 
-echo "-----> exporting PATH and LIBRARY_PATH"
+echo "-----> exporting 7zip bin"
 
-PROFILE_PATH="$BUILD_DIR/.profile.d/7za.sh"
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/7zip/p7zip_16.02/bin:\$PATH\"" > $BUILD_DIR/.profile.d/7za.sh
 
-mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/7zip/p7zip_16.02/bin' >> $PROFILE_PATH
+
+
