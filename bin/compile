@@ -31,7 +31,7 @@ make test
 echo "-----> exporting 7zip bin"
 
 mkdir -p $BUILD_DIR/.profile.d
-echo "export PATH=\"\$HOME/vendor/7zip/p7zip_16.02/bin:\$PATH\"" > $BUILD_DIR/.profile.d/7za.sh
+echo "export PATH=\"\$HOME/vendor/7zip/p7zip_16.02/bin:\$PATH\"" > $BUILD_DIR/.profile.d/7z.sh
 
 
 
