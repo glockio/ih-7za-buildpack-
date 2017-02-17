@@ -23,7 +23,7 @@ echo "-----> Building setting soruce makefile"
 cp makefile.linux_x86_asm_gcc_4 makefile.machine
 
 echo "-----> Running make..."
-make
+make clean
 
 echo "-----> Running 7zip tests"
 make test
