@@ -2,7 +2,6 @@
 # bin/compile <build-dir> <cache-dir>
 echo "-----> Installing 7zip 16.02"
 
-BUILD_DIR="/Users/Greg/InputHealth/ih-7zip-heroku-buildpack/bin"
 PACKAGE="https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2"
 LOCATION="$BUILD_DIR/vendor/7zip"
 
