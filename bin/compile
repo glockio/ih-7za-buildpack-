@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+echo "-----> Installing 7zip 16.02"
+
+BUILD_DIR="./"
+PACKAGE="https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2"
+LOCATION="$BUILD_DIR/vendor/7zip"
+HOST=""
+echo $BUILD_DIR
+
+mkdir -p $LOCATION
+echo "-----> Fetching 7zip source"
+cd $LOCATION
+curl $PACKAGE -OL
+
+echo "-----> Unzipping 7zip"
+tar xjvf p7zip_16.02_src_all.tar.bz2
+
+echo "-----> Building 7zip from source"
+cd p7zip_16.02
+
+echo "-----> Building setting soruce makefile"
+cp makefile.macosx_gcc_64bits makefile.machine
+
+echo "-----> Running make..."
+make
+
+echo "-----> Validate build..."
+make test
+
+echo "-----> exporting PATH and LIBRARY_PATH"
+
+PROFILE_PATH="$BUILD_DIR/.profile.d/7za.sh"
+
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:$HOME/vendor/7za/bin"' >> $PROFILE_PATH
