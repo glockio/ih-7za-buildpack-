@@ -21,7 +21,7 @@ echo "-----> Building 7zip from source"
 cd p7zip_16.02
 
 echo "-----> Building setting soruce makefile"
-cp makefile.linux_x86_asm_gcc_4.X makefile.machine
+cp makefile.linux_any_cpu  makefile.machine
 
 
 echo "-----> Running make..."
