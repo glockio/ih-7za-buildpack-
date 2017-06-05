@@ -23,6 +23,7 @@ cd p7zip_16.02
 echo "-----> Building setting soruce makefile"
 cp makefile.linux_any_cpu_gcc_4.X makefile.machine
 
+
 echo "-----> Running make..."
 make clean
 
