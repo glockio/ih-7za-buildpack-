@@ -2,7 +2,7 @@
 # bin/compile <build-dir> <cache-dir>
 echo "-----> Installing 7zip 16.02"
 
-BUILD_DIR=''
+BUILD_DIR=$1
 PACKAGE="https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2"
 LOCATION="$BUILD_DIR/vendor/7zip"
 
