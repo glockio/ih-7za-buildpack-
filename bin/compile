@@ -20,19 +20,19 @@ tar xjvf p7zip_16.02_src_all.tar.bz2 -C $LOCATION
 echo "-----> Building 7zip from source"
 cd p7zip_16.02
 
-# echo "-----> Building setting soruce makefile"
-# cp makefile.linux_x86_asm_gcc_4 makefile.machine
+echo "-----> Building setting soruce makefile"
+cp makefile.linux_any_cpu_gcc_4.X makefile.machine
 
 echo "-----> Running make..."
-make 7z
+make clean
 
-# echo "-----> Running 7zip tests"
-# make test
+echo "-----> Running 7zip tests"
+make test
 
-# echo "-----> exporting 7zip bin"
+echo "-----> exporting 7zip bin"
 
-# mkdir -p $BUILD_DIR/.profile.d
-# echo "export PATH=\"\$HOME/vendor/7zip/p7zip_16.02/bin:\$PATH\"" > $BUILD_DIR/.profile.d/7z.sh
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"\$HOME/vendor/7zip/p7zip_16.02/bin:\$PATH\"" > $BUILD_DIR/.profile.d/7z.sh
 
 
 
